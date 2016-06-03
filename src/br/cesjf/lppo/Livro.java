@@ -59,8 +59,10 @@ public class Livro implements Serializable{
 
     @Override
     public String toString() {
-        return "Livro{" + "titulo=" + titulo + ", autor=" + autor + ", ano=" + ano + '}';
+        return "Livro{" + "id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", ano=" + ano + ", preco=" + preco + '}';
     }
+
+   
     
     
 }
