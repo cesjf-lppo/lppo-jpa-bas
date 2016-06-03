@@ -8,31 +8,24 @@ import javax.persistence.Persistence;
  *
  * @author igor
  */
-public class Principal {
+public class BuscarRegistro {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Livro livro =  new Livro();
-        livro.setTitulo("O Senhor dos Anéis");
-        livro.setAutor("JRR Tolkien");
-        livro.setAno(1937);
-        livro.setPreco(34.23f);
-        
-        System.out.println("Hello World!");
-        System.out.println(livro);
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("lppo-jpa-bas-pu");
         
         EntityManager em = emf.createEntityManager();
         
-        em.getTransaction().begin();
-        em.persist(livro);
-        em.getTransaction().commit();
+        Livro livro = em.find(Livro.class, 151L);
+        Livro livro2 = em.find(Livro.class, 1L);
+        Livro livro3 = em.find(Livro.class, 2L);
+        System.out.println(livro);
+        System.out.println(livro2);
+        System.out.println(livro3);
         
-        em.close();
-        emf.close();
     }
     
 }
